@@ -130,6 +130,61 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 .modal .row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .modal .row .btn{flex:1}
 
+/* ДНЕВНОЙ СБОР */
+.daily-box{max-width:520px;margin:0 auto;padding:18px;text-align:center}
+.daily-box .flame{font-size:52px;line-height:1;filter:drop-shadow(0 6px 16px rgba(255,140,0,.6));animation:flamePulse 1.6s infinite alternate}
+@keyframes flamePulse{from{transform:scale(1)}to{transform:scale(1.08)}}
+.daily-box .daily-title{font-size:18px;font-weight:900;color:#fff;margin-top:8px}
+.daily-box .daily-sub{font-size:12px;color:#9fc0dd;margin-top:4px;line-height:1.5}
+.daily-reward{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:12px 22px;border-radius:16px;font-size:18px;font-weight:900;background:linear-gradient(135deg, rgba(255,209,102,.4), rgba(220,150,40,.25));border:1px solid rgba(255,209,102,.7);color:#ffe28a;box-shadow:0 8px 28px rgba(255,209,102,.25)}
+.daily-reward.ready{animation:goldPulse 1.4s infinite alternate}
+@keyframes goldPulse{from{box-shadow:0 0 20px rgba(255,209,102,.4)}to{box-shadow:0 0 50px rgba(255,209,102,.9)}}
+.daily-btn{margin-top:14px;font-size:16px;padding:14px 26px;font-weight:900}
+
+/* ЧАСЫ */
+.clock-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:16px}
+.clock-face{position:relative;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 50% 40%, #12365c, #071a33 70%);border:6px solid rgba(255,255,255,.35);box-shadow:0 14px 44px rgba(0,0,0,.55), inset 0 0 30px rgba(143,216,255,.25)}
+.clock-face::after{content:'';position:absolute;inset:10px;border-radius:50%;border:1px dashed rgba(255,255,255,.18)}
+.clock-face .tick{position:absolute;left:50%;top:50%;transform-origin:0 0;background:rgba(255,255,255,.7)}
+.clock-face .tick.major{width:3px;height:12px;background:#ffd166;border-radius:2px}
+.clock-face .tick.minor{width:2px;height:6px;background:rgba(255,255,255,.5);border-radius:1px}
+.hand{position:absolute;left:50%;top:50%;transform-origin:0 100%;border-radius:6px;transform:translate(-50%,-100%)}
+.hand.hour{width:6px;height:60px;background:linear-gradient(180deg,#fff,#8fd8ff);box-shadow:0 0 12px rgba(143,216,255,.6)}
+.hand.minute{width:4px;height:82px;background:linear-gradient(180deg,#fff,#d6f1ff);box-shadow:0 0 10px rgba(214,241,255,.5)}
+.hand.second{width:2px;height:92px;background:#e63946;box-shadow:0 0 8px rgba(230,57,70,.8)}
+.clock-center{position:absolute;left:50%;top:50%;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#fff,#8fd8ff);transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(143,216,255,.9)}
+.clock-digital{margin-top:4px;font-size:15px;font-weight:800;color:#fff;letter-spacing:1px;font-variant-numeric:tabular-nums}
+
+/* Стили часов */
+.clock-face.style-classic{border-color:rgba(255,255,255,.35);background:radial-gradient(circle at 50% 40%, #12365c, #071a33 70%)}
+.clock-face.style-gold{border-color:#ffd166;background:radial-gradient(circle at 50% 40%, #4a3a10, #1a1204 70%);box-shadow:0 14px 44px rgba(0,0,0,.55), inset 0 0 30px rgba(255,209,102,.35)}
+.clock-face.style-gold .tick.major{background:#ffe28a}
+.clock-face.style-gold .hand.hour{background:linear-gradient(180deg,#ffe28a,#e6a53a)}
+.clock-face.style-gold .hand.minute{background:linear-gradient(180deg,#fff3b0,#ffd166)}
+.clock-face.style-gold .clock-center{background:radial-gradient(circle,#fff,#ffd166)}
+.clock-face.style-candy{border-color:#ff9ec4;background:radial-gradient(circle at 50% 40%, #5d1a3a, #2a0a1a 70%);box-shadow:0 14px 44px rgba(0,0,0,.55), inset 0 0 30px rgba(255,158,196,.35)}
+.clock-face.style-candy .tick.major{background:#ff9ec4}
+.clock-face.style-candy .hand.hour{background:linear-gradient(180deg,#fff,#ff9ec4)}
+.clock-face.style-candy .hand.minute{background:linear-gradient(180deg,#fff,#ffd6e6)}
+.clock-face.style-candy .hand.second{background:#7ee2a8}
+.clock-face.style-candy .clock-center{background:radial-gradient(circle,#fff,#ff9ec4)}
+.clock-face.style-forest{border-color:#7ee2a8;background:radial-gradient(circle at 50% 40%, #14532d, #05130a 70%);box-shadow:0 14px 44px rgba(0,0,0,.55), inset 0 0 30px rgba(126,226,168,.3)}
+.clock-face.style-forest .tick.major{background:#7ee2a8}
+.clock-face.style-forest .hand.hour{background:linear-gradient(180deg,#fff,#7ee2a8)}
+.clock-face.style-forest .hand.minute{background:linear-gradient(180deg,#fff,#b6f0cc)}
+.clock-face.style-forest .hand.second{background:#ffd166}
+.clock-face.style-forest .clock-center{background:radial-gradient(circle,#fff,#7ee2a8)}
+
+/* Стили отсчёта */
+.countdown{font-size:clamp(14px,3.6vw,18px);font-weight:900;letter-spacing:1px;padding:10px 18px;border-radius:16px;font-variant-numeric:tabular-nums;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;min-height:44px;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;max-width:100%}
+.countdown.style-plain{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+.countdown.style-glow{background:linear-gradient(135deg, rgba(143,216,255,.25), rgba(74,163,224,.12));border-color:var(--ice);color:#fff;box-shadow:0 0 24px rgba(143,216,255,.55);animation:countGlow 1.8s infinite alternate}
+@keyframes countGlow{from{box-shadow:0 0 16px rgba(143,216,255,.35)}to{box-shadow:0 0 34px rgba(143,216,255,.8)}}
+.countdown.style-gold{background:linear-gradient(135deg, rgba(255,209,102,.3), rgba(220,150,40,.18));border-color:#ffd166;color:#ffe28a;text-shadow:0 0 12px rgba(255,209,102,.8)}
+.countdown.style-candy{background:linear-gradient(135deg, rgba(255,158,196,.3), rgba(230,57,70,.18));border-color:#ff9ec4;color:#ffd6e6}
+.countdown.style-forest{background:linear-gradient(135deg, rgba(126,226,168,.25), rgba(42,157,92,.15));border-color:#7ee2a8;color:#b6f0cc}
+
+/* ЛОТЕРЕЯ */
 .lottery-box{position:relative;padding:20px 16px;text-align:center;background:radial-gradient(ellipse at top, rgba(255,209,102,.15), transparent 60%),rgba(3,10,22,.4)}
 .lottery-machine{position:relative;width:220px;height:280px;margin:0 auto 16px}
 .machine-top{position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:60px;background:linear-gradient(180deg,#e63946,#b02030);border-radius:20px 20px 0 0;border:3px solid rgba(255,255,255,.4);box-shadow:0 4px 20px rgba(230,57,70,.6);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;font-weight:900;letter-spacing:2px}
@@ -146,7 +201,6 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 .prize-reveal{text-align:center;padding:20px;border-radius:18px;background:rgba(0,0,0,.3);border:1px solid var(--glass-border);font-size:44px;line-height:1.2;position:relative}
 .prize-reveal .label{font-size:15px;color:#cfe7ff;margin-top:8px;font-weight:600}
 .prize-reveal.rare{background:linear-gradient(135deg, rgba(255,209,102,.35), rgba(220,150,40,.2));border-color:#ffd166;animation:goldPulse 1.2s infinite alternate}
-@keyframes goldPulse{from{box-shadow:0 0 20px rgba(255,209,102,.4)}to{box-shadow:0 0 50px rgba(255,209,102,.9)}}
 .coll-bars{display:grid;gap:10px;margin-top:14px}
 .coll-bar{font-size:12px;color:#bcd8f0}
 .coll-bar .track{height:8px;border-radius:6px;background:rgba(0,0,0,.35);margin-top:4px;overflow:hidden}
@@ -154,16 +208,7 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 
 /* НАЛЁТ НА МАНДАРИНЫ */
 .mandarin-raid-board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:420px;margin:14px auto}
-.mandarin-cell{
-  aspect-ratio:1;border-radius:16px;
-  background:linear-gradient(135deg, rgba(255,209,102,.25), rgba(143,216,255,.15));
-  border:2px solid rgba(255,255,255,.3);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:44px;
-  transition:transform .2s, background .2s;
-  user-select:none;
-  box-shadow:0 4px 12px rgba(0,0,0,.3);
-}
+.mandarin-cell{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg, rgba(255,209,102,.25), rgba(143,216,255,.15));border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:44px;transition:transform .2s, background .2s;user-select:none;box-shadow:0 4px 12px rgba(0,0,0,.3)}
 .mandarin-cell:hover{transform:scale(1.04);background:linear-gradient(135deg, rgba(255,209,102,.4), rgba(143,216,255,.25))}
 .mandarin-cell.revealed{background:rgba(255,255,255,.9);color:#071a33;animation:popIn .4s ease;cursor:default}
 .mandarin-cell.revealed.poop{background:rgba(60,40,30,.9);color:#fff}
@@ -182,7 +227,7 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 .card canvas{margin:0 auto;display:block;image-rendering:pixelated}
 
 #gameWrap{position:relative;border-radius:16px;overflow:hidden;background:#0b2545;touch-action:none;width:100%}
-#gameCanvas{display:block;width:100%;height:auto;image-rendering:pixelated;touch-action:none}
+#gameCanvas{display:block;width:100%;height:100%;image-rendering:pixelated;touch-action:none}
 .game-hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:8px 10px;pointer-events:none;font-weight:800;font-size:13px;gap:6px}
 .game-hud .pill{background:rgba(6,20,40,.75);border:1px solid rgba(255,255,255,.3);padding:5px 11px;border-radius:11px;pointer-events:auto;font-size:14px}
 .mobile-controls{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:space-between;padding:0 12px;pointer-events:none}
@@ -226,7 +271,6 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 .profile-back{height:150px;position:relative;border-radius:var(--radius) var(--radius) 0 0;background-size:cover;background-position:center;overflow:visible}
 .profile-back .bg-photo{position:absolute;inset:0;background-size:cover;background-position:center;border-radius:var(--radius) var(--radius) 0 0}
 
-/* ЦЕНТР */
 .profile-card.layout-center .profile-avatar{position:absolute;bottom:-46px;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;background:rgba(10,30,55,.9);border:4px solid #fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.5);overflow:visible;z-index:10}
 .profile-card.layout-center .profile-body{padding:56px 18px 20px;text-align:center}
 .profile-card.layout-center .profile-name-row{display:block}
@@ -235,7 +279,6 @@ label{font-size:13px;color:#a9c8e4;font-weight:600;display:block;margin-bottom:5
 .profile-card.layout-center .profile-awards-title{text-align:center}
 .profile-card.layout-center .profile-awards{justify-content:center}
 
-/* СЛЕВА — без сдвига текста, аватар слева от блока */
 .profile-card.layout-left .profile-back{height:110px}
 .profile-card.layout-left .profile-body{padding:0 18px 20px;text-align:left;position:relative}
 .profile-card.layout-left .profile-avatar{position:relative;bottom:auto;left:auto;transform:none;width:92px;height:92px;border-radius:50%;background:rgba(10,30,55,.9);border:4px solid #fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.5);overflow:visible;z-index:10;margin-top:-46px}
@@ -454,6 +497,10 @@ footer .disclaimer{font-size:10px;color:#5f7a94;margin-top:10px;line-height:1.5}
   .mandarin-stage{width:110px;height:110px}
   .deco-item{width:46px;height:46px;font-size:20px}
   .mandarin-cell{font-size:38px}
+  .clock-face{width:190px;height:190px}
+  .hand.hour{height:50px}
+  .hand.minute{height:68px}
+  .hand.second{height:78px}
 }
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -492,17 +539,33 @@ footer .disclaimer{font-size:10px;color:#5f7a94;margin-top:10px;line-height:1.5}
     <div class="dd-item" onclick="closeProfileDropdown(); showHelp()">❓ Помощь</div>
   </div>
 
+  <!-- ГЛАВНОЕ МЕНЮ: ТОЛЬКО ДНЕВНОЙ СБОР + ЧАСЫ -->
   <div id="sec-menu" class="section active">
     <div class="logo"><h1>❄️ SnowTimes ❄️</h1><p>Погрузись в зимнюю сказку уже сегодня!</p></div>
+
     <div id="nyGiftBanner" class="glass" onclick="openNewYearGift()"><div class="big">🎁</div><div class="txt">Забрать новогодний подарок!</div><div style="font-size:11px;color:#ffe28a;margin-top:2px">31 декабря – 1 января</div></div>
-    <div id="streakBanner" class="glass" style="padding:10px;margin-bottom:12px;display:none">
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span style="font-size:24px">🔥</span>
-        <div style="flex:1;min-width:120px"><div style="font-weight:800;font-size:13px" id="streakText">Серия: 0 дней</div><div style="font-size:11px;color:#9fc0dd" id="streakHint">Заходи каждые 18 часов!</div></div>
-        <button class="btn btn-sm btn-gold" id="claimStreakBtn" onclick="claimStreakReward()">+10 ❄</button>
-      </div>
+
+    <!-- ЕЖЕДНЕВНЫЙ СБОР -->
+    <div class="glass daily-box">
+      <div class="flame">🔥</div>
+      <div class="daily-title" id="dailyTitle">Ежедневный сбор снежинок</div>
+      <div class="daily-sub" id="dailyHint">Заходи каждый день и собирай награду серии!</div>
+      <div class="daily-reward ready" id="dailyReward">+10 ❄️</div>
+      <button class="btn btn-gold daily-btn" id="dailyClaimBtn" onclick="claimStreakReward()">Забрать награду</button>
     </div>
-    <div class="tiles" id="mainTiles"></div>
+
+    <!-- НОВОГОДНИЕ ЧАСЫ -->
+    <div class="clock-wrap">
+      <div class="clock-face style-classic" id="clockFace">
+        <!-- Метки и стрелки создаются JS -->
+        <div class="hand hour" id="handHour"></div>
+        <div class="hand minute" id="handMinute"></div>
+        <div class="hand second" id="handSecond"></div>
+        <div class="clock-center"></div>
+      </div>
+      <div class="clock-digital" id="clockDigital">--:--:--</div>
+      <div class="countdown style-glow" id="countdown">До Нового года: --д --ч --м --с</div>
+    </div>
   </div>
 
   <div id="sec-games" class="section">
@@ -605,7 +668,6 @@ footer .disclaimer{font-size:10px;color:#5f7a94;margin-top:10px;line-height:1.5}
         <div class="profile-avatar" id="profileAvatarWrap"><div class="avatar-deco" id="avatarDeco"></div></div>
       </div>
       <div class="profile-body" id="profileBody">
-        <!-- Разметка для центрального и левого лайаута через класс карточки -->
         <div class="profile-name-row" id="profileNameRow">
           <div class="profile-name" id="profileNameText">Игрок</div>
           <div class="profile-nick" id="profileNickText"><span id="profileNickValue">@user</span><span id="nameDecoRight" class="nick-deco"></span></div>
@@ -676,6 +738,24 @@ footer .disclaimer{font-size:10px;color:#5f7a94;margin-top:10px;line-height:1.5}
       <label style="margin-top:14px">Акцентный цвет</label><div class="color-grid" id="accentColorGrid"></div>
 
       <hr style="margin:12px 0;border-color:rgba(255,255,255,.15)">
+      <h3 style="font-size:15px;margin-bottom:10px">🕰️ Часы на главном</h3>
+      <label>Стиль циферблата</label>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        <button class="btn btn-sm clock-style-btn" data-clockstyle="classic" onclick="setClockStyle('classic')">Классика</button>
+        <button class="btn btn-sm clock-style-btn" data-clockstyle="gold" onclick="setClockStyle('gold')">Золото</button>
+        <button class="btn btn-sm clock-style-btn" data-clockstyle="candy" onclick="setClockStyle('candy')">Карамель</button>
+        <button class="btn btn-sm clock-style-btn" data-clockstyle="forest" onclick="setClockStyle('forest')">Лес</button>
+      </div>
+      <label style="margin-top:12px">Стиль отсчёта до Нового года</label>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+        <button class="btn btn-sm countdown-style-btn" data-countstyle="plain" onclick="setCountdownStyle('plain')">Простой</button>
+        <button class="btn btn-sm countdown-style-btn" data-countstyle="glow" onclick="setCountdownStyle('glow')">Свечение</button>
+        <button class="btn btn-sm countdown-style-btn" data-countstyle="gold" onclick="setCountdownStyle('gold')">Золото</button>
+        <button class="btn btn-sm countdown-style-btn" data-countstyle="candy" onclick="setCountdownStyle('candy')">Карамель</button>
+        <button class="btn btn-sm countdown-style-btn" data-countstyle="forest" onclick="setCountdownStyle('forest')">Лес</button>
+      </div>
+
+      <hr style="margin:12px 0;border-color:rgba(255,255,255,.15)">
       <h3 style="font-size:15px;margin-bottom:10px">❄️ Снегопад</h3>
       <div class="snow-setting-grid" id="snowSettingGrid">
         <div class="snow-option" data-snow="calm" onclick="setSnowMode('calm')"><div class="snow-icon">🌨️</div><div class="snow-name">Спокойный</div></div>
@@ -691,7 +771,7 @@ footer .disclaimer{font-size:10px;color:#5f7a94;margin-top:10px;line-height:1.5}
       </div>
 
       <div class="app-version-box">
-        <div><b>SnowTimes</b> • версия <b>1.8.0</b></div>
+        <div><b>SnowTimes</b> • версия <b>1.9.0</b></div>
         <div style="margin-top:4px">Поддержка: <a href="mailto:q-acd@mail.ru">q-acd@mail.ru</a></div>
         <div style="margin-top:4px;font-size:10px;opacity:.7">Все совпадения случайны • 6+</div>
       </div>
@@ -866,7 +946,9 @@ const State = {
   accentColor: 'ice',
   harvest: 0, storage: 0, lastHarvestTick: 0,
   snowMode: 'calm',
-  usedPromos: []
+  usedPromos: [],
+  clockStyle: 'classic',
+  countdownStyle: 'glow'
 };
 let shopCols = 'auto';
 
@@ -902,6 +984,8 @@ function loadState(){
   State.lastHarvestTick = lsGet('snowtimes_last_harvest_tick', Date.now());
   State.snowMode = lsGet('snowtimes_snow_mode', 'calm');
   State.usedPromos = lsGet('snowtimes_used_promos', []);
+  State.clockStyle = lsGet('snowtimes_clock_style', 'classic');
+  State.countdownStyle = lsGet('snowtimes_countdown_style', 'glow');
   Sound.enabled = lsGet('snowtimes_sound_enabled', true);
   shopCols = State.shopCols;
 }
@@ -920,6 +1004,8 @@ function saveAll(){
   lsSet('snowtimes_harvest', State.harvest); lsSet('snowtimes_storage', State.storage); lsSet('snowtimes_last_harvest_tick', State.lastHarvestTick);
   lsSet('snowtimes_snow_mode', State.snowMode);
   lsSet('snowtimes_used_promos', State.usedPromos);
+  lsSet('snowtimes_clock_style', State.clockStyle);
+  lsSet('snowtimes_countdown_style', State.countdownStyle);
 }
 function applyTheme(){ document.body.setAttribute('data-theme', State.theme); const acc = ACCENT_COLORS.find(c=>c.id===State.accentColor) || ACCENT_COLORS[0]; document.documentElement.style.setProperty('--accent', acc.c1); document.documentElement.style.setProperty('--accent-2', acc.c2); }
 function toast(msg, gold=false){ const t = document.createElement('div'); t.className = 'toast' + (gold?' gold':''); t.innerHTML = msg; $('toasts').appendChild(t); setTimeout(()=>t.remove(), 3800); }
@@ -954,7 +1040,7 @@ function renderProfileDropdown(){
   else { const cv = document.createElement('canvas'); cv.width = 38; cv.height = 38; wrap.appendChild(cv); drawChar(cv, State.skin, 38); }
 }
 function showHelp(){
-  showModal(`<div style="text-align:center"><div style="font-size:44px">❓</div><h3>Помощь</h3><div style="font-size:13px;color:#bcd8f0;line-height:1.6;text-align:left;margin-top:8px"><p style="margin-bottom:8px"><b>❄️ Снежинки</b> — основная валюта.</p><p style="margin-bottom:8px"><b>🍊 Мандарины</b> — вторая валюта.</p><p style="margin-bottom:8px"><b>🎟️ Билеты</b> — для лотереи.</p><p style="margin-bottom:8px"><b>🔥 Серия</b> — заходи каждые 18 часов.</p><p style="margin-bottom:8px"><b>🎄 Ёлка</b> — украшения генерируют снежинки.</p><p style="margin-bottom:8px"><b>🎁 Промокоды</b> — в настройках профиля.</p><p>Поддержка: <a href="mailto:q-acd@mail.ru" style="color:#8fd8ff">q-acd@mail.ru</a></p></div></div>`, `<button class="btn btn-sm btn-green" onclick="closeModal()">Понятно</button>`);
+  showModal(`<div style="text-align:center"><div style="font-size:44px">❓</div><h3>Помощь</h3><div style="font-size:13px;color:#bcd8f0;line-height:1.6;text-align:left;margin-top:8px"><p style="margin-bottom:8px"><b>❄️ Снежинки</b> — основная валюта.</p><p style="margin-bottom:8px"><b>🍊 Мандарины</b> — вторая валюта.</p><p style="margin-bottom:8px"><b>🎟️ Билеты</b> — для лотереи.</p><p style="margin-bottom:8px"><b>🔥 Серия</b> — заходи каждый день и забирай ежедневный сбор.</p><p style="margin-bottom:8px"><b>🕰️ Часы</b> — текущее время и отсчёт до Нового года.</p><p style="margin-bottom:8px"><b>🎄 Ёлка</b> — украшения генерируют снежинки.</p><p style="margin-bottom:8px"><b>🎁 Промокоды</b> — в настройках профиля.</p><p>Поддержка: <a href="mailto:q-acd@mail.ru" style="color:#8fd8ff">q-acd@mail.ru</a></p></div></div>`, `<button class="btn btn-sm btn-green" onclick="closeModal()">Понятно</button>`);
 }
 function showPrizesList(){ $('prizesDropdown').classList.add('show'); }
 function closePrizesList(){ $('prizesDropdown').classList.remove('show'); }
@@ -1003,7 +1089,6 @@ const MENU_TILES = [
   {id:'profile', icon:'👤', name:'Профиль', sub:'Фото и настройки'},
   {id:'wallpapers', icon:'🖼️', name:'Обои', sub:'Смена фона'}
 ];
-function renderMenuTiles(){ $('mainTiles').innerHTML = MENU_TILES.map(t => `<div class="tile glass ${t.highlight?'highlight':''}" onclick="showSection('${t.id}')"><div class="icon">${t.icon}</div><div class="name">${t.name}</div><div class="sub">${t.sub}</div></div>`).join(''); }
 
 function openFullscreen(type){
   const fs = $('gameFullscreen'); const body = $('gameFsBody'); const title = $('gameFsTitle');
@@ -1050,8 +1135,8 @@ function showSection(id){
   const navMap = {'games':'games','lottery':'lottery','shop':'shop','tree':'tree','achievements':'achievements'};
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   if(navMap[id]){ const btn = document.querySelector(`.nav-btn[data-nav="${navMap[id]}"]`); if(btn) btn.classList.add('active'); }
-  if(id==='menu'){ renderMenuTiles(); updateHUD(); checkNewYearBanner(); renderStreakBanner(); }
-  if(id==='profile'){ renderProfile(); renderThemePicker(); renderAccentPicker(); renderSnowPicker(); renderLayoutChoice(); }
+  if(id==='menu'){ updateHUD(); checkNewYearBanner(); renderDailyBox(); }
+  if(id==='profile'){ renderProfile(); renderThemePicker(); renderAccentPicker(); renderSnowPicker(); renderLayoutChoice(); renderClockStylePicker(); renderCountdownStylePicker(); }
   if(id==='lottery'){ renderLotteryUI(); renderMandarinRaidBoard(); }
   if(id==='achievements'){ renderAchievements(); renderAchievementsTop(); }
   if(id==='shop'){ switchShopTab(currentShopTab); }
@@ -1174,7 +1259,7 @@ const AVATAR_DECO_ITEMS = ['🎩','🧢','🎓','👒','⛑️','🪖','👑','�
 const PROFILE_COLORS = ['#8fd8ff','#4aa3e0','#2a9d5c','#e63946','#ffd166','#d6f1ff','#b6e2ff','#a0e0a0','#ffb6c1'];
 const WISHES = ['Пусть Новый год принесёт море счастья!','Снежного настроения и тёплых объятий!','Пусть сбудется самая заветная мечта!','Здоровья, удачи и волшебства!','Пусть каждый день будет как праздник!','Счастья в новом году и исполнения желаний!','Пусть снежинки кружат в танце удачи!','Тёплого дома и уютных вечеров!','Пусть звёзды светят ярко на твоём пути!','Мира, добра и новогоднего чуда!','Пусть близкие будут рядом всегда!','Волшебства и ярких моментов!','Пусть Новый год откроет новые горизонты!','Снежной сказки и сладких подарков!','Пусть удача следует за тобой повсюду!','Гармонии и вдохновения!','Пусть каждый миг будет счастливым!','Светлой радости и крепкого здоровья!','Пусть мечты сбываются легко и просто!','Тепла в сердце и снега за окном!','Пусть Новый год будет щедрым на подарки!','Смеха, радости и позитива!','Пусть рядом будут верные друзья!','Пусть все тревоги растают как снег!','Сказочного настроения на весь год!','Пусть любовь согревает в любой мороз!','Невероятных приключений и открытий!','Счастья в каждом дне и мгновении!','Пусть этот год станет лучшим!','Пусть сбудутся все новогодние желания!','Света, тепла и доброты вокруг!','Пусть в доме всегда будет праздник!','Морозной свежести и ярких эмоций!','Веры в чудо и в себя!','Пусть каждый рассвет будет добрым!','Мира и спокойствия твоей семье!','Пусть снежные ангелы хранят тебя!','Счастья, любви и вдохновения!','Пусть Новый год подарит крылья!','Благополучия и исполнения заветных планов!','Снежинки удачи и звёзды успеха!','Пусть этот год будет волшебным!','Радости, мира и добра!','Пусть тепло остаётся в сердце навсегда!'];
 
-/* НАЛЁТ НА МАНДАРИНЫ — КНОПКА СТАРТ, ЗАТЕМ 9 КЛИКАБЕЛЬНЫХ КЛЕТОК */
+/* НАЛЁТ НА МАНДАРИНЫ */
 const MANDARIN_RAID_PRIZES = [1,3,5,7,9,10,15,20];
 const MANDARIN_RAID_COST = 2;
 let raidState = { phase: 'idle', board: [], chosenIdx: -1, reward: 0 };
@@ -1192,7 +1277,6 @@ function renderMandarinRaidBoard(){
       board.appendChild(el);
     }
   } else if(phase === 'active'){
-    // 9 кликабельных клеток — нужно нажать на одну
     for(let i=0;i<9;i++){
       const el = document.createElement('div');
       el.className = 'mandarin-cell';
@@ -1202,7 +1286,6 @@ function renderMandarinRaidBoard(){
       board.appendChild(el);
     }
   } else if(phase === 'result'){
-    // Показан результат — выбранная клетка раскрыта, остальные скрыты
     raidState.board.forEach((cell, i)=>{
       const el = document.createElement('div');
       if(i === raidState.chosenIdx){
@@ -1216,7 +1299,6 @@ function renderMandarinRaidBoard(){
     });
   }
 
-  // Обновляем кнопку
   const btn = $('raidStartBtn'); if(btn){
     if(phase === 'idle'){
       const canAfford = State.tickets >= MANDARIN_RAID_COST;
@@ -1238,7 +1320,6 @@ function startMandarinRaid(){
   State.achievements._raids = (State.achievements._raids || 0) + 1;
   saveAll(); updateHUD(); Sound.spin();
 
-  // Генерируем поле: 9 клеток, в одной — 💩 (10%), в остальных — мандарины
   const poopIdx = Math.floor(Math.random() * 9);
   const board = [];
   for(let i=0;i<9;i++){
@@ -1272,7 +1353,6 @@ function revealRaidCell(idx){
   }
   renderMandarinRaidBoard();
 
-  // Через 2.5 сек — регенерация
   setTimeout(()=>{
     raidState = { phase: 'idle', board: [], chosenIdx: -1, reward: 0 };
     renderMandarinRaidBoard();
@@ -1463,39 +1543,26 @@ function setProfileLayout(layout){ State.profile.layout = layout; saveAll(); ren
 function renderProfile(){
   const back = $('profileBack'); if(!back) return;
   const card = $('profileCard'); if(card){ card.className = 'profile-card glass layout-' + (State.profile.layout || 'center'); }
-  // Перестроение body для левого лайаута
   const body = $('profileBody');
   const nameRow = $('profileNameRow');
   const avatarWrap = $('profileAvatarWrap');
   if(State.profile.layout === 'left'){
-    // Перемещаем аватар внутрь body — создаём header-row
     if(!body.querySelector('.profile-header-row')){
       const headerRow = document.createElement('div');
       headerRow.className = 'profile-header-row';
       const headerInfo = document.createElement('div');
       headerInfo.className = 'profile-header-info';
-      // Аватар вставляем в header-row
-      if(avatarWrap.parentNode === back){
-        back.removeChild(avatarWrap);
-      }
+      if(avatarWrap.parentNode === back){ back.removeChild(avatarWrap); }
       headerRow.appendChild(avatarWrap);
-      // Имя/ник переносим в headerInfo
       headerRow.appendChild(headerInfo);
       headerInfo.appendChild(nameRow);
       body.insertBefore(headerRow, body.firstChild);
     }
   } else {
-    // Центр — возвращаем аватар в back, nameRow в начало body
     const headerRow = body.querySelector('.profile-header-row');
     if(headerRow){
-      if(avatarWrap.parentNode === headerRow){
-        headerRow.removeChild(avatarWrap);
-        back.appendChild(avatarWrap);
-      }
-      if(nameRow.parentNode && nameRow.parentNode !== body){
-        nameRow.parentNode.removeChild(nameRow);
-        body.insertBefore(nameRow, body.firstChild);
-      }
+      if(avatarWrap.parentNode === headerRow){ headerRow.removeChild(avatarWrap); back.appendChild(avatarWrap); }
+      if(nameRow.parentNode && nameRow.parentNode !== body){ nameRow.parentNode.removeChild(nameRow); body.insertBefore(nameRow, body.firstChild); }
       headerRow.remove();
     }
   }
@@ -1547,6 +1614,16 @@ function setTheme(id){ State.theme = id; saveAll(); applyTheme(); renderThemePic
 function setAccentColor(id){ State.accentColor = id; saveAll(); applyTheme(); renderAccentPicker(); Sound.click(); toast('🎨 Цвет применён!'); }
 function setSnowMode(mode){ State.snowMode = mode; saveAll(); renderSnowPicker(); SnowSystem.updateMode(mode); Sound.click(); const names = {calm:'Спокойный снег', blizzard:'Метель', none:'Без снега'}; toast('❄️ Снегопад: ' + names[mode]); }
 
+/* СТИЛИ ЧАСОВ И ОТСЧЁТА */
+function renderClockStylePicker(){ document.querySelectorAll('.clock-style-btn').forEach(b=>{ b.classList.toggle('btn-gold', b.dataset.clockstyle === State.clockStyle); }); }
+function renderCountdownStylePicker(){ document.querySelectorAll('.countdown-style-btn').forEach(b=>{ b.classList.toggle('btn-gold', b.dataset.countstyle === State.countdownStyle); }); }
+function setClockStyle(style){ State.clockStyle = style; saveAll(); renderClockStylePicker(); applyClockStyles(); Sound.click(); toast('🕰️ Стиль часов изменён'); }
+function setCountdownStyle(style){ State.countdownStyle = style; saveAll(); renderCountdownStylePicker(); applyClockStyles(); Sound.click(); toast('⏳ Стиль отсчёта изменён'); }
+function applyClockStyles(){
+  const face = $('clockFace'); if(face){ face.className = 'clock-face style-' + State.clockStyle; }
+  const cd = $('countdown'); if(cd){ cd.className = 'countdown style-' + State.countdownStyle; }
+}
+
 /* ФЕЙЕРВЕРК */
 let fwParticles = [], fwRunning = false;
 function initFireworks(){
@@ -1557,7 +1634,7 @@ function initFireworks(){
   const addFirework = (x,y)=>{ const color = `hsl(${rnd(0,360)},90%,65%)`; for(let i=0;i<40;i++){ const ang = rnd(0,Math.PI*2), spd = rnd(2,6); fwParticles.push({x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, life:1, color}); } Sound.play(rnd(200,500), 0.15, 'sine', 0.06); };
   canvas.onclick = e=>{ const rect = canvas.getBoundingClientRect(); const scaleX = canvas.width / rect.width; addFirework((e.clientX-rect.left)*scaleX, (e.clientY-rect.top)*scaleX); };
   canvas.ontouchstart = e=>{ e.preventDefault(); const rect = canvas.getBoundingClientRect(); const t = e.touches[0]; const scaleX = canvas.width / rect.width; addFirework((t.clientX-rect.left)*scaleX, (t.clientY-rect.top)*scaleX); };
-  if(!fwRunning){ fwRunning = true; const loop = ()=>{ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle = 'rgba(3,10,22,.25)'; ctx.fillRect(0,0,canvas.width,canvas.height); for(let i=fwParticles.length-1;i>=0;i--){ const p = fwParticles[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.vx *= 0.99; p.life -= 0.012; if(p.life <= 0){ fwParticles.splice(i,1); continue; } ctx.globalAlpha = p.life; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2); ctx.fill(); } ctx.globalAlpha = 1; if(document.getElementById('gameFullscreen') && document.getElementById('gameFullscreen').classList.contains('show') && $('fwCanvas')) requestAnimationFrame(loop); else if(document.getElementById('sec-fireworks') && document.getElementById('sec-fireworks').classList.contains('active') && document.visibilityState === 'visible') requestAnimationFrame(loop); else fwRunning = false; }; requestAnimationFrame(loop); }
+  if(!fwRunning){ fwRunning = true; const loop = ()=>{ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle = 'rgba(3,10,22,.25)'; ctx.fillRect(0,0,canvas.width,canvas.height); for(let i=fwParticles.length-1;i>=0;i--){ const p = fwParticles[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.vx *= 0.99; p.life -= 0.012; if(p.life <= 0){ fwParticles.splice(i,1); continue; } ctx.globalAlpha = p.life; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2); ctx.fill(); } ctx.globalAlpha = 1; if(document.getElementById('gameFullscreen') && document.getElementById('gameFullscreen').classList.contains('show') && $('fwCanvas')) requestAnimationFrame(loop); else fwRunning = false; }; requestAnimationFrame(loop); }
 }
 function clearFireworks(){ fwParticles = []; }
 
@@ -1680,15 +1757,77 @@ function wrapTextLeft(ctx, text, x, y, maxW, lineH){ const words = text.split(' 
 
 const STREAK_COOLDOWN = 18*60*60*1000;
 function processVisitStreak(){ const today = todayStr(); if(!State.visitDays.includes(today)){ State.visitDays.push(today); const yest = new Date(); yest.setDate(yest.getDate()-1); const yStr = yest.getFullYear()+'-'+String(yest.getMonth()+1).padStart(2,'0')+'-'+String(yest.getDate()).padStart(2,'0'); if(State.visitDays.includes(yStr)) State.streak++; else State.streak = 1; saveAll(); } }
-function renderStreakBanner(){ const st = $('streakText'); if(!st) return; st.textContent = `🔥 Серия: ${State.streak} ${State.streak===1?'день':State.streak<5?'дня':'дней'}`; $('streakBanner').style.display = 'block'; const btn = $('claimStreakBtn'); const timePassed = Date.now() - State.lastStreakClaim; if(timePassed >= STREAK_COOLDOWN){ btn.disabled = false; btn.textContent = `+${State.streak*10} ❄️`; $('streakHint').textContent = 'Готово к получению!'; } else { const rem = STREAK_COOLDOWN - timePassed; btn.disabled = true; btn.textContent = `⏱️ ${fmtTime(rem)}`; $('streakHint').textContent = `Через ${fmtTime(rem)}`; } }
-let streakInterval = null;
-function startStreakTimer(){ if(streakInterval) return; streakInterval = setInterval(()=>{ if($('sec-menu').classList.contains('active') && document.visibilityState === 'visible') renderStreakBanner(); }, 2000); }
-function claimStreakReward(){ const timePassed = Date.now() - State.lastStreakClaim; if(timePassed < STREAK_COOLDOWN){ toast(`Подожди ${fmtTime(STREAK_COOLDOWN-timePassed)}`); return; } const reward = State.streak * 10; addCoins(reward); State.lastStreakClaim = Date.now(); saveAll(); toast(`🔥 Награда: +${reward} ❄️`, true); renderStreakBanner(); }
+function renderDailyBox(){
+  const reward = $('dailyReward'); const btn = $('dailyClaimBtn'); const hint = $('dailyHint'); const title = $('dailyTitle');
+  if(!reward || !btn) return;
+  const timePassed = Date.now() - State.lastStreakClaim;
+  const ready = timePassed >= STREAK_COOLDOWN;
+  title.textContent = `Серия: ${State.streak} ${State.streak===1?'день':State.streak<5?'дня':'дней'} 🔥`;
+  if(ready){
+    reward.textContent = `+${Math.max(10, State.streak*10)} ❄️`;
+    reward.classList.add('ready');
+    btn.disabled = false;
+    btn.textContent = 'Забрать награду';
+    hint.textContent = 'Награда готова! Заходи каждый день, чтобы увеличить серию.';
+  } else {
+    const rem = STREAK_COOLDOWN - timePassed;
+    reward.classList.remove('ready');
+    reward.textContent = `Следующая: +${Math.max(10, State.streak*10)} ❄️`;
+    btn.disabled = true;
+    btn.textContent = `⏱️ ${fmtTime(rem)}`;
+    hint.textContent = `Следующая награда через ${fmtTime(rem)}. Не пропускай дни!`;
+  }
+}
+let dailyInterval = null;
+function startDailyTimer(){ if(dailyInterval) return; dailyInterval = setInterval(()=>{ if($('sec-menu') && $('sec-menu').classList.contains('active') && document.visibilityState === 'visible') renderDailyBox(); }, 2000); }
+function claimStreakReward(){ const timePassed = Date.now() - State.lastStreakClaim; if(timePassed < STREAK_COOLDOWN){ toast(`Подожди ${fmtTime(STREAK_COOLDOWN-timePassed)}`); return; } const reward = Math.max(10, State.streak * 10); addCoins(reward); State.lastStreakClaim = Date.now(); saveAll(); toast(`🔥 Награда: +${reward} ❄️`, true); renderDailyBox(); }
 
+/* НОВОГОДНИЙ ПОДАРОК */
 function checkNewYearBanner(){ const now = new Date(); const m = now.getMonth()+1, d = now.getDate(); const isNY = (m===12 && d===31) || (m===1 && d===1); const b = $('nyGiftBanner'); if(b) b.classList.toggle('show', isNY && !State.newYearGiftClaimed); }
 function openNewYearGift(){ if(State.newYearGiftClaimed){ toast('Подарок уже получен!'); return; } const now = new Date(); const m = now.getMonth()+1, d = now.getDate(); if(!((m===12 && d===31) || (m===1 && d===1))){ toast('Только 31 декабря – 1 января!'); return; } State.newYearGiftClaimed = true; State.shop.nyGift = true; addCoins(100); addMandarins(10); saveAll(); Sound.win(); showModal(`<div style="text-align:center"><div style="font-size:60px">🎁</div><h3>2027</h3><p style="color:#ffe28a;font-size:13px;margin:6px 0">Прощай 2026, здравствуй 2027!</p><p style="font-size:16px;margin-top:8px">+100 ❄️ +10 🍊</p></div>`); checkNewYearBanner(); updateHUD(); checkAchievements(); }
 function showModal(html, buttons){ const overlay = document.createElement('div'); overlay.className = 'modal-overlay'; overlay.innerHTML = `<div class="modal glass">${html}${buttons?`<div class="row">${buttons}</div>`:''}</div>`; overlay.addEventListener('click', e=>{ if(e.target===overlay) overlay.remove(); }); document.body.appendChild(overlay); return overlay; }
 function closeModal(){ document.querySelectorAll('.modal-overlay').forEach(m=>m.remove()); }
+
+/* ЧАСЫ И ОТСЧЁТ */
+function setupClockMarks(){
+  const face = $('clockFace'); if(!face) return;
+  face.querySelectorAll('.tick').forEach(t=>t.remove());
+  for(let i=0;i<60;i++){
+    const tick = document.createElement('div');
+    const major = i % 5 === 0;
+    tick.className = 'tick ' + (major ? 'major' : 'minor');
+    const angle = i * 6;
+    const radius = major ? 95 : 100;
+    tick.style.transform = `rotate(${angle}deg) translateY(-${radius}px)`;
+    face.appendChild(tick);
+  }
+}
+function updateClock(){
+  const now = new Date();
+  const sec = now.getSeconds(), min = now.getMinutes(), hr = now.getHours() % 12;
+  const secDeg = sec * 6;
+  const minDeg = min * 6 + sec * 0.1;
+  const hrDeg = hr * 30 + min * 0.5;
+  const h = $('handHour'), m = $('handMinute'), s = $('handSecond');
+  if(h) h.style.transform = `translate(-50%,-100%) rotate(${hrDeg}deg)`;
+  if(m) m.style.transform = `translate(-50%,-100%) rotate(${minDeg}deg)`;
+  if(s) s.style.transform = `translate(-50%,-100%) rotate(${secDeg}deg)`;
+  const d = $('clockDigital');
+  if(d) d.textContent = String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0') + ':' + String(now.getSeconds()).padStart(2,'0');
+  const nextYear = new Date(now.getFullYear()+1, 0, 1, 0, 0, 0, 0);
+  if(now.getMonth() === 11 && now.getDate() === 31 && now.getHours() === 23 && now.getMinutes() === 59 && now.getSeconds() === 59){ /* next second it's NY */ }
+  const diff = nextYear - now;
+  if(diff <= 0){ /* just in case */ }
+  const totalSec = Math.floor(diff / 1000);
+  const days = Math.floor(totalSec / 86400);
+  const hours = Math.floor((totalSec % 86400) / 3600);
+  const mins = Math.floor((totalSec % 3600) / 60);
+  const secs = totalSec % 60;
+  const cd = $('countdown');
+  if(cd) cd.textContent = `До Нового года: ${days}д ${String(hours).padStart(2,'0')}ч ${String(mins).padStart(2,'0')}м ${String(secs).padStart(2,'0')}с`;
+}
+let clockInterval = null;
+function startClockTimer(){ if(clockInterval) return; clockInterval = setInterval(()=>{ if($('sec-menu') && $('sec-menu').classList.contains('active') && document.visibilityState === 'visible') updateClock(); }, 1000); }
 
 function init(){
   loadState();
@@ -1696,15 +1835,20 @@ function init(){
   processVisitStreak();
   processTicketRegen();
   processHarvestAccrual();
-  renderMenuTiles();
   updateHUD();
   checkNewYearBanner();
-  renderStreakBanner();
+  renderDailyBox();
   renderMandarinRaidBoard();
+  setupClockMarks();
+  applyClockStyles();
+  updateClock();
+  renderClockStylePicker();
+  renderCountdownStylePicker();
   setTimeout(checkAchievements, 800);
   startHudTimer();
-  startStreakTimer();
+  startDailyTimer();
   startHarvestTimer();
+  startClockTimer();
   SnowSystem.init();
   setInterval(()=>{ processTicketRegen(); }, 30000);
   const initAudio = ()=>{
